@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에그팜 - 신선함의 기준을 바꾸다</title>
+    <!-- 폰트 적용 (Pretendard) -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <style>
+        /* 기본 스타일 초기화 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Pretendard', sans-serif; color: #333; line-height: 1.6; background-color: #FAFAFA; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* 공통 클래스 */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-title { text-align: center; font-size: 36px; font-weight: 800; margin-bottom: 20px; color: #222; }
+        .section-subtitle { text-align: center; font-size: 18px; color: #666; margin-bottom: 50px; word-break: keep-all; }
+        .highlight { color: #F5A623; }
+        
+        /* 헤더 (네비게이션) */
+        header { background-color: #fff; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .header-wrap { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; }
+        .logo img { height: 60px; width: auto; }
+        .nav-links a { margin-left: 30px; font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: #F5A623; }
+
+        /* 히어로 섹션 (메인 배너) */
+        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('main.png') center/cover; color: #fff; padding: 160px 20px; text-align: center; }
+        .hero h1 { font-size: 52px; font-weight: 800; margin-bottom: 20px; }
+        .hero p { font-size: 26px; font-weight: 500; margin-bottom: 40px; text-shadow: 1px 1px 4px rgba(0,0,0,0.6); }
+        
+        .btn-primary { background-color: #F5A623; color: #fff; padding: 18px 45px; font-size: 20px; font-weight: bold; border-radius: 30px; display: inline-block; transition: all 0.3s; box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4); }
+        .btn-primary:hover { background-color: #E09600; transform: translateY(-2px); }
+
+        /* 상세 이미지 섹션 & 브랜드 스토리 */
+        .info-image-section { padding: 100px 0; background-color: #fff; }
+        .info-image-section img { max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 40px; }
+        
+        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .trust-card { background: #f9f9f9; padding: 30px; border-radius: 15px; text-align: center; }
+        .trust-card h3 { font-size: 24px; color: #333; margin-bottom: 15px; font-weight: 700; }
+        .trust-card p { font-size: 16px; color: #555; }
+
+        /* 경쟁력 섹션 (Why Egg Farm) */
+        .features { padding: 100px 0; background-color: #FAFAFA; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .feature-item { text-align: left; padding: 40px 30px; background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-top: 4px solid #F5A623; }
+        .feature-item h3 { font-size: 22px; margin-bottom: 15px; color: #222; font-weight: 800; }
+        .feature-item p { color: #666; font-size: 15px; line-height: 1.6; }
+        .feature-item .badge { display: inline-block; background: #F5A623; color: white; padding: 5px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; margin-bottom: 15px; }
+
+        /* 가맹문의 섹션 (Contact) */
+        .contact { padding: 100px 0; background-color: #FFF9F0; }
+        .contact-wrap { display: flex; flex-wrap: wrap; gap: 50px; }
+        .contact-info { flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center; }
+        .contact-info h2 { font-size: 40px; line-height: 1.3; margin-bottom: 20px; font-weight: 800; }
+        .contact-info p { font-size: 18px; color: #555; }
+        .phone-number { font-size: 48px; font-weight: 800; color: #F5A623; margin: 30px 0; display: block; }
+        
+        /* 입력 폼 스타일 */
+        .contact-form { flex: 1.2; min-width: 300px; background: #fff; padding: 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 10px; color: #444; }
+        .form-group input, .form-group textarea { width: 100%; padding: 15px; border: 1px solid #e0e0e0; border-radius: 10px; font-family: inherit; font-size: 16px; transition: border 0.3s; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #F5A623; }
+        .form-group textarea { resize: vertical; height: 120px; }
+        .submit-btn { width: 100%; background-color: #222; color: #fff; border: none; padding: 18px; font-size: 20px; font-weight: bold; border-radius: 10px; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background-color: #F5A623; }
+        .submit-btn:disabled { background-color: #aaa; cursor: not-allowed; }
+        
+        /* 푸터 */
+        footer { background-color: #222; color: #aaa; text-align: center; padding: 50px 20px; font-size: 14px; }
+        footer p { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-wrap">
+            <div class="logo">
+                <img src="logo.png" alt="에그팜 로고 - 우리집 건강식탁">
+            </div>
+            <div class="nav-links">
+                <a href="#about">브랜드 소개</a>
+                <a href="#features">프랜차이즈 경쟁력</a>
+                <a href="#contact">가맹문의</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>우리가족 건강식탁, <span class="highlight">에그팜</span></h1>
+        <p>산지에서 식탁까지 단 3일, 프리미엄 계란의 새로운 패러다임</p>
+        <a href="#contact" class="btn-primary">성공 창업 문의하기</a>
+    </section>
+
+    <!-- 에그팜 브랜드 소개 섹션 -->
+    <section id="about" class="info-image-section">
+        <div class="container">
+            <h2 class="section-title">건강한 먹거리의 시작, <span class="highlight">에그팜</span></h2>
+            <p class="section-subtitle">자연의 신선함을 그대로 담아 고객의 식탁까지 가장 안전하게 전달합니다.</p>
+            
+            <!-- 요청하신 브랜드 이야기 이미지 -->
+            <div style="text-align: center;">
+                <img src="브랜드소개.png" alt="에그팜 브랜드 이야기 - 신선함이 다르다">
+            </div>
+            
+            <!-- 텍스트 요약 컨텐츠 -->
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <h3>에그팜 3無 원칙</h3>
+                    <p>항생제, 합성 향균제, 호르몬제를 일절 사용하지 않아 가족 모두가 안심하고 먹을 수 있습니다.</p>
+                </div>
+                <div class="trust-card">
+                    <h3>철저한 위생 및 인증</h3>
+                    <p>콜드체인 시스템과 함께 무항생제 친환경 사육, 동물복지, 식약처 HACCP 인증 기준을 엄격히 준수합니다.</p>
+                </div>
+                <div class="trust-card">
+                    <h3>프리미엄 라인업</h3>
+                    <p>자유방목 난각번호 1번 장수란부터, 명품란, 그리고 교동 간편식(HMR)까지 다양한 영양 만점 제품을 공급합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 프랜차이즈 경쟁력 섹션 -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">왜 <span class="highlight">에그팜 창업</span>이어야 할까요?</h2>
+            <p class="section-subtitle">공정거래위원회에 등록된 공식 프랜차이즈 에그팜과 함께 안정적인 수익을 창출하세요.</p>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="badge">소자본 창업</div>
+                    <h3>7평 매장, 2,500만 원</h3>
+                    <p>7평 기준 약 2,500만 원의 소자본(임대료 제외, 냉장고 8대 및 인테리어 포함)으로 무인도매직판점과 정기배송대리점을 동시 창업할 수 있습니다.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="badge">압도적 마진율</div>
+                    <h3>평균 30% 이상 수익</h3>
+                    <p>유통 단계를 없앤 농장 직송 직판 도매가격 시스템으로 전 제품 평균 마진율 30% 이상을 달성하며, 평균 10개월 이내 투자 환수가 가능합니다.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="badge">투잡 가능</div>
+                    <h3>24시간 무인 운영</h3>
+                    <p>스마트 무인 매장 시스템으로 인건비를 대폭 절감할 수 있으며, 소비자가 시간에 구애받지 않고 언제든 구매 가능합니다.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="badge">본사 파격 지원</div>
+                    <h3>가맹비 무료 혜택</h3>
+                    <p>가맹비 전면 무료 및 2년간 가맹 로열티 면제 혜택을 제공하며[cite: 1], 계약 후 최단 2주 안에 오픈이 가능하도록 본사가 든든하게 지원합니다.</p>
+                </div>
+            </div>
+
+            <!-- 요청하신 에그팜 선택 이유 이미지 -->
+            <div style="text-align: center; margin-top: 30px;">
+                <img src="photo_2026-07-13_16-57-26 (3).jpg" alt="에그팜을 선택해야 하는 이유 - 공정위 등록 기업">
+            </div>
+        </div>
+    </section>
+
+    <!-- 가맹문의 섹션 -->
+    <section id="contact" class="contact">
+        <div class="container contact-wrap">
+            <div class="contact-info">
+                <h2>에그팜과 함께<br><span class="highlight">성공 신화</span>를 쓰세요</h2>
+                <p>계절과 경기를 타지 않는 면세사업 아이템, 계란<br>지금 바로 가맹 상담을 신청하세요.</p>
+                <a href="tel:010-5733-0499" class="phone-number">010-5733-0499</a> <!-- 이미지 텍스트에 명시된 대표번호 반영 -->
+                <p>운영시간: 평일 09:00 - 18:00</p>
+            </div>
+
+            <div class="contact-form">
+                <form id="eggfarm-form" name="submit-to-google-sheet">
+                    <div class="form-group">
+                        <label for="name">성함 / 상호명</label>
+                        <input type="text" id="name" name="name" placeholder="홍길동" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">연락처</label>
+                        <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" name="email" placeholder="example@eggfarm.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">창업 문의 내용</label>
+                        <textarea id="message" name="message" placeholder="희망 창업 지역(예: 서울 송파구), 보유 자본금, 기타 궁금한 점을 자유롭게 적어주세요." required></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn" class="submit-btn">가맹 상담 신청하기</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>상호: 주식회사 에그팜 | 대표: 고종현 | 사업자등록번호: 377-86-03522</p>
+            <p>본사사옥: 서울특별시 송파구 삼학사로1길 54</p>
+            <p>창업문의: 010-5733-0499</p>
+            <p style="margin-top: 20px;">&copy; 2026 Egg Farm. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ★여기에 발급받으신 '웹 앱 URL'을 따옴표 안에 다시 붙여넣으세요!★
+        const scriptURL = '★여기에_발급받으신_웹_앱_URL을_따옴표_안에_다시_붙여넣으세요!★';
+        
+        const form = document.forms['submit-to-google-sheet'];
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault(); 
+            
+            submitBtn.innerText = '전송 중입니다...'; 
+            submitBtn.disabled = true; 
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    alert('가맹 상담 문의가 성공적으로 접수되었습니다. 빠르게 연락드리겠습니다!');
+                    form.reset(); 
+                    submitBtn.innerText = '가맹 상담 신청하기';
+                    submitBtn.disabled = false; 
+                })
+                .catch(error => {
+                    alert('전송에 실패했습니다. 대표전화(1588-4654)로 문의 부탁드립니다.\n에러 원인: ' + error.message);
+                    submitBtn.innerText = '가맹 상담 신청하기';
+                    submitBtn.disabled = false;
+                });
+        });
+    </script>
+</body>
+</html>
