@@ -18,6 +18,9 @@
         .section-subtitle { text-align: center; font-size: 18px; color: #666; margin-bottom: 50px; word-break: keep-all; }
         .highlight { color: #F5A623; }
         
+        /* 강조 텍스트 전용 스타일 */
+        .text-accent { color: #F5A623; font-weight: 700; }
+        
         /* 헤더 (네비게이션) */
         header { background-color: #fff; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         .header-wrap { display: flex; justify-content: space-between; align-items: center; }
@@ -43,17 +46,17 @@
         .trust-card h3 { font-size: 24px; color: #333; margin-bottom: 15px; font-weight: 700; }
         .trust-card p { font-size: 16px; color: #555; }
 
-        /* ★ 추가된 제품 소개 섹션 스타일 ★ */
-        .product-section { padding: 100px 0; background-color: #FAFAFA; border-top: 1px solid #eaeaea; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .product-card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; text-align: center; border: 1px solid #eaeaea; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .product-image { width: 100%; height: 260px; background-color: #f8f8f8; overflow: hidden; position: relative; }
-        .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-        .product-card:hover .product-image img { transform: scale(1.08); }
-        .product-info { padding: 25px 20px; }
-        .product-title { font-size: 22px; font-weight: 800; color: #222; margin-bottom: 10px; }
-        .product-desc { font-size: 15px; color: #666; line-height: 1.5; word-break: keep-all; }
+        /* 제품 소개 섹션 스타일 */
+        .menu-section { padding: 100px 0; background-color: #FAFAFA; border-top: 1px solid #eaeaea; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .menu-card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; text-align: center; border: 1px solid #eaeaea; }
+        .menu-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .menu-image { width: 100%; height: 260px; background-color: #f8f8f8; overflow: hidden; position: relative; }
+        .menu-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+        .menu-card:hover .menu-image img { transform: scale(1.08); }
+        .menu-info { padding: 25px 20px; }
+        .menu-title { font-size: 22px; font-weight: 800; color: #222; margin-bottom: 10px; }
+        .menu-desc { font-size: 15px; color: #666; line-height: 1.5; word-break: keep-all; }
 
         /* 경쟁력 섹션 (Why Egg Farm) */
         .features { padding: 100px 0; background-color: #fff; border-top: 1px solid #eaeaea; }
@@ -116,8 +119,7 @@
             </div>
             <div class="nav-links">
                 <a href="#about">브랜드 소개</a>
-                <!-- ★ 메뉴에 제품소개 추가 ★ -->
-                <a href="#products">제품 소개</a>
+                <a href="#menus">제품 소개</a>
                 <a href="#features">프랜차이즈 경쟁력</a>
                 <a href="#interviews">가맹점 성공사례</a>
                 <a href="#contact">가맹문의</a>
@@ -142,9 +144,10 @@
             </div>
             
             <div class="trust-grid">
+                <!-- ★ 3無, 항생제, 합성 향균제, 호르몬제 강조 스타일 적용 ★ -->
                 <div class="trust-card">
-                    <h3>에그팜 3無 원칙</h3>
-                    <p>항생제, 합성 향균제, 호르몬제를 일절 사용하지 않아 가족 모두가 안심하고 먹을 수 있습니다.</p>
+                    <h3>에그팜 <span class="text-accent">3無</span> 원칙</h3>
+                    <p><span class="text-accent">항생제</span>, <span class="text-accent">합성 향균제</span>, <span class="text-accent">호르몬제</span>를 일절 사용하지 않아 가족 모두가 안심하고 먹을 수 있습니다.</p>
                 </div>
                 <div class="trust-card">
                     <h3>철저한 위생 및 인증</h3>
@@ -158,54 +161,54 @@
         </div>
     </section>
     
-    <!-- ★ 새로 추가된 프리미엄 제품 소개 섹션 ★ -->
-    <section id="products" class="product-section">
+    <!-- 제품 소개 섹션 -->
+    <section id="menus" class="menu-section">
         <div class="container">
             <h2 class="section-title">에그팜 <span class="highlight">프리미엄 라인업</span></h2>
             <p class="section-subtitle">고객의 건강과 입맛을 사로잡는 에그팜만의 특별한 제품들을 소개합니다.</p>
             
-            <div class="product-grid">
+            <div class="menu-grid">
                 <!-- 1. 장수란 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="장수란.png" alt="장수란 제품 사진">
+                <div class="menu-card">
+                    <div class="menu-image">
+                        <img src="item1.png" alt="장수란">
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">장수란</h3>
-                        <p class="product-desc">자연에서 자유롭게 뛰어놀며 자란 닭이 낳은 난각번호 1번의 최상급 프리미엄 방목란입니다.</p>
+                    <div class="menu-info">
+                        <h3 class="menu-title">장수란</h3>
+                        <p class="menu-desc">자연에서 자유롭게 뛰어놀며 자란 닭이 낳은 난각번호 1번의 최상급 프리미엄 방목란입니다.</p>
                     </div>
                 </div>
 
                 <!-- 2. 시골란 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="시골란.png" alt="시골란 제품 사진">
+                <div class="menu-card">
+                    <div class="menu-image">
+                        <img src="item2.png" alt="시골란">
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">시골란</h3>
-                        <p class="product-desc">맑은 공기와 깨끗한 환경에서 건강하게 자란 닭의 영양을 듬뿍 담은 고소한 계란입니다.</p>
+                    <div class="menu-info">
+                        <h3 class="menu-title">시골란</h3>
+                        <p class="menu-desc">맑은 공기와 깨끗한 환경에서 건강하게 자란 닭의 영양을 듬뿍 담은 고소한 계란입니다.</p>
                     </div>
                 </div>
 
                 <!-- 3. 명품란 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="명품란.png" alt="명품란 제품 사진">
+                <div class="menu-card">
+                    <div class="menu-image">
+                        <img src="item3.png" alt="명품란">
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">명품란</h3>
-                        <p class="product-desc">엄격한 사양 관리와 특수 사료를 통해 맛과 영양의 균형을 극대화한 에그팜의 시그니처입니다.</p>
+                    <div class="menu-info">
+                        <h3 class="menu-title">명품란</h3>
+                        <p class="menu-desc">엄격한 사양 관리와 특수 사료를 통해 맛과 영양의 균형을 극대화한 에그팜의 시그니처입니다.</p>
                     </div>
                 </div>
 
-                <!-- 4. 기타/간편식 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="간편식.png" alt="교동 간편식 제품 사진">
+                <!-- 4. 간편식 -->
+                <div class="menu-card">
+                    <div class="menu-image">
+                        <img src="item4.png" alt="교동 간편식">
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">교동 간편식</h3>
-                        <p class="product-desc">바쁜 일상 속에서도 든든하게 즐길 수 있는 교동 영양 간편식입니다.</p>
+                    <div class="menu-info">
+                        <h3 class="menu-title">교동 간편식</h3>
+                        <p class="menu-desc">바쁜 일상 속에서도 든든하게 즐길 수 있는 교동 영양 간편식입니다.</p>
                     </div>
                 </div>
             </div>
@@ -257,8 +260,7 @@
                 <!-- 1. 삼전동 3호점 -->
                 <div class="interview-card">
                     <div class="interview-image">
-                        <!-- ★ 파일 확장자(.jpg) 복구 완료 ★ -->
-                        <img src="삼전동3호.png" alt="삼전동 3호점 점주 사진">
+                        <img src="store1.jpg" alt="삼전동 3호점 점주 사진">
                     </div>
                     <div class="interview-content">
                         <div class="interview-header">
@@ -277,8 +279,7 @@
                 <!-- 2. 삼전5호점 -->
                 <div class="interview-card">
                     <div class="interview-image">
-                        <!-- ★ 파일 확장자(.jpg) 복구 완료 ★ -->
-                        <img src="삼전동5호.png" alt="삼전5호점 점주 사진">
+                        <img src="store2.jpg" alt="삼전5호점 점주 사진">
                     </div>
                     <div class="interview-content">
                         <div class="interview-header">
@@ -297,8 +298,7 @@
                 <!-- 3. 가락동점 -->
                 <div class="interview-card">
                     <div class="interview-image">
-                        <!-- ★ 파일 확장자(.jpg) 복구 완료 ★ -->
-                        <img src="가락동.png" alt="가락동점 점주 사진">
+                        <img src="store3.jpg" alt="가락동점 점주 사진">
                     </div>
                     <div class="interview-content">
                         <div class="interview-header">
@@ -317,8 +317,7 @@
                 <!-- 4. 산본시장점 -->
                 <div class="interview-card">
                     <div class="interview-image">
-                        <!-- ★ 파일 확장자(.jpg) 복구 완료 ★ -->
-                        <img src="산본시장.png" alt="산본시장점 점주 사진">
+                        <img src="store4.jpg" alt="산본시장점 점주 사진">
                     </div>
                     <div class="interview-content">
                         <div class="interview-header">
@@ -337,8 +336,7 @@
                 <!-- 5. 마천시장점 -->
                 <div class="interview-card">
                     <div class="interview-image">
-                        <!-- ★ 파일 확장자(.jpg) 복구 완료 ★ -->
-                        <img src="마천시장.png" alt="마천시장점 점주 사진">
+                        <img src="store5.jpg" alt="마천시장점 점주 사진">
                     </div>
                     <div class="interview-content">
                         <div class="interview-header">
