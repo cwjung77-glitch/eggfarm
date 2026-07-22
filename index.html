@@ -51,18 +51,19 @@
         .feature-item p { color: #666; font-size: 15px; line-height: 1.6; }
         .feature-item .badge { display: inline-block; background: #F5A623; color: white; padding: 5px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; margin-bottom: 15px; }
 
-        /* 점주 인터뷰 섹션 스타일 추가 */
+        /* 점주 인터뷰 섹션 스타일 */
         .interview-section { padding: 100px 0; background-color: #fff; }
         .interview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .interview-card { background: #fff; border: 1px solid #eaeaea; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; display: flex; flex-direction: column; }
         .interview-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
         .interview-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: #F5A623; z-index: 10; }
         
-        /* ★ 추가된 사진 영역 스타일 ★ */
+        /* 사진 영역 스타일 */
         .interview-image { width: 100%; height: 200px; overflow: hidden; position: relative; }
         .interview-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-        .interview-card:hover .interview-image img { transform: scale(1.05); } /* 마우스 오버 시 사진 살짝 확대 */
+        .interview-card:hover .interview-image img { transform: scale(1.05); } 
         
+        /* 텍스트 영역 스타일 */
         .interview-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
         .interview-header { display: flex; align-items: center; margin-bottom: 20px; }
         .store-name { font-size: 20px; font-weight: 800; color: #222; }
@@ -104,7 +105,6 @@
             <div class="nav-links">
                 <a href="#about">브랜드 소개</a>
                 <a href="#features">프랜차이즈 경쟁력</a>
-                <!-- ★ 메뉴에 가맹점 인터뷰 추가 ★ -->
                 <a href="#interviews">가맹점 성공사례</a>
                 <a href="#contact">가맹문의</a>
             </div>
@@ -179,7 +179,7 @@
         </div>
     </section>
 
-    <!-- ★ 새로 추가된 점주 인터뷰 섹션 ★ -->
+    <!-- ★ 수정된 점주 인터뷰 섹션 (사진 포함) ★ -->
     <section id="interviews" class="interview-section">
         <div class="container">
             <h2 class="section-title">에그팜과 함께한 <span class="highlight">성공 스토리</span></h2>
@@ -188,73 +188,101 @@
             <div class="interview-grid">
                 <!-- 1. 삼전동 3호점 -->
                 <div class="interview-card">
-                    <div class="interview-header">
-                        <div>
-                            <div class="store-name">삼전동 3호점</div>
-                            <div class="store-owner">점주 인터뷰</div>
-                        </div>
+                    <!-- ★ 사진 이미지 (파일명 변경 필요) ★ -->
+                    <div class="interview-image">
+                        <img src="store1.jpg" alt="삼전동 3호점 점주 사진">
                     </div>
-                    <div class="interview-body">
-                        <!-- 실제 인터뷰의 핵심 소제목으로 교체해주세요 -->
-                        <span class="interview-highlight">"송파 삼전동3호 가맹점주(30대 주부) 월 순이익 150만원대"</span>
-                        <!-- 실제 인터뷰 내용으로 교체해주세요 -->
-                        <p>솔직히 처음엔 반신반의했어요. 2,500만원을 들여 시작하는 게 쉬운 결정은 아니잖아요. 그런데 막상 운영해보니 생각보다 손이 많이 가지 않고, 매출도 꾸준히 나와서 지금은 월 순이익 150만원대 정도는 되고 있어요. 큰돈은 아니어도 아이들 학원비나 장보기 비용에 보태니 집안 살림에 확실히 숨통이 트이더라고요.</p>
+                    <div class="interview-content">
+                        <div class="interview-header">
+                            <div>
+                                <div class="store-name">삼전동 3호점</div>
+                                <div class="store-owner">점주 인터뷰</div>
+                            </div>
+                        </div>
+                        <div class="interview-body">
+                            <span class="interview-highlight">"송파 삼전동3호 가맹점주(30대 주부) 월 순이익 150만원대"</span>
+                            <p>솔직히 처음엔 반신반의했어요. 2,500만원을 들여 시작하는 게 쉬운 결정은 아니잖아요. 그런데 막상 운영해보니 생각보다 손이 많이 가지 않고, 매출도 꾸준히 나와서 지금은 월 순이익 150만원대 정도는 되고 있어요. 큰돈은 아니어도 아이들 학원비나 장보기 비용에 보태니 집안 살림에 확실히 숨통이 트이더라고요.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 2. 삼전5호점 -->
                 <div class="interview-card">
-                    <div class="interview-header">
-                        <div>
-                            <div class="store-name">삼전5호점</div>
-                            <div class="store-owner">점주 인터뷰</div>
-                        </div>
+                    <!-- ★ 사진 이미지 (파일명 변경 필요) ★ -->
+                    <div class="interview-image">
+                        <img src="store2.jpg" alt="삼전5호점 점주 사진">
                     </div>
-                    <div class="interview-body">
-                        <span class="interview-highlight">"송파 삼전5호점 가맹점주(30대 주부) 월 순이익 250만원대"</span>
-                        <p>남편 수입만으로 생활하던 때에는 늘 아끼고 또 아껴야 했어요. 그래서 무리하지 않는 선에서 뭔가 해보자 싶어 시작한 게 에그팜이었는데, 지금은 월 순이익이 250만원대 정도 나와요. 이 돈이 생기니까 적어도 생활비 때문에 마음 졸이는 일은 많이 줄었습니다. 에그팜은 매출이 확 늘어나거나 줄어들지 않아요. 많은 수입은 아니지만 저는 매월 이런 고정적인 안정감이 제일 좋습니다.</p>
+                    <div class="interview-content">
+                        <div class="interview-header">
+                            <div>
+                                <div class="store-name">삼전5호점</div>
+                                <div class="store-owner">점주 인터뷰</div>
+                            </div>
+                        </div>
+                        <div class="interview-body">
+                            <span class="interview-highlight">"송파 삼전5호점 가맹점주(30대 주부) 월 순이익 250만원대"</span>
+                            <p>남편 수입만으로 생활하던 때에는 늘 아끼고 또 아껴야 했어요. 그래서 무리하지 않는 선에서 뭔가 해보자 싶어 시작한 게 에그팜이었는데, 지금은 월 순이익이 250만원대 정도 나와요. 이 돈이 생기니까 적어도 생활비 때문에 마음 졸이는 일은 많이 줄었습니다. 에그팜은 매출이 확 늘어나거나 줄어들지 않아요. 많은 수입은 아니지만 저는 매월 이런 고정적인 안정감이 제일 좋습니다.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 3. 가락동점 -->
                 <div class="interview-card">
-                    <div class="interview-header">
-                        <div>
-                            <div class="store-name">가락동점</div>
-                            <div class="store-owner">점주 인터뷰</div>
-                        </div>
+                    <!-- ★ 사진 이미지 (파일명 변경 필요) ★ -->
+                    <div class="interview-image">
+                        <img src="store3.jpg" alt="가락동점 점주 사진">
                     </div>
-                    <div class="interview-body">
-                        <span class="interview-highlight">"송파 가락동점 가맹점주(30대 직장인) 월 순이익 180만원대"</span>
-                        <p>창업은 결국 남는 돈이 중요하다고 생각합니다. 보여주기식 매출보다 실제 순이익이 얼마나 되는지가 핵심인데, 에그팜은 그 부분이 나쁘지 않았습니다. 2천5백만원에 추가 냉장고와 공사비가 더나와 3천1백만원 들어가서 운영 중이고 현재 월 순이익은 180만원대 수준입니다. 아이 교육비나 보험료 같은 고정비에 보탤 수 있어서 아내도 좋아라 합니다. 가정경제 측면에서는 꽤 만족스럽습니다.</p>
+                    <div class="interview-content">
+                        <div class="interview-header">
+                            <div>
+                                <div class="store-name">가락동점</div>
+                                <div class="store-owner">점주 인터뷰</div>
+                            </div>
+                        </div>
+                        <div class="interview-body">
+                            <span class="interview-highlight">"송파 가락동점 가맹점주(30대 직장인) 월 순이익 180만원대"</span>
+                            <p>창업은 결국 남는 돈이 중요하다고 생각합니다. 보여주기식 매출보다 실제 순이익이 얼마나 되는지가 핵심인데, 에그팜은 그 부분이 나쁘지 않았습니다. 2천5백만원에 추가 냉장고와 공사비가 더나와 3천1백만원 들어가서 운영 중이고 현재 월 순이익은 180만원대 수준입니다. 아이 교육비나 보험료 같은 고정비에 보탤 수 있어서 아내도 좋아라 합니다. 가정경제 측면에서는 꽤 만족스럽습니다.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 4. 산본시장점 -->
                 <div class="interview-card">
-                    <div class="interview-header">
-                        <div>
-                            <div class="store-name">산본시장점</div>
-                            <div class="store-owner">점주 인터뷰</div>
-                        </div>
+                    <!-- ★ 사진 이미지 (파일명 변경 필요) ★ -->
+                    <div class="interview-image">
+                        <img src="store4.jpg" alt="산본시장점 점주 사진">
                     </div>
-                    <div class="interview-body">
-                        <span class="interview-highlight">"군포 산본시장점 가맹점주(60대 정년퇴직자) 월 순이익 200만원대"</span>
-                        <p>나이 들어서 무리한 일은 하기 어렵고, 그렇다고 집에만 있자니 수입이 아쉬웠습니다. 그래서 시작한 게 에그팜인데, 생각보다 운영이 어렵지 않았고 지금은 월 순이익이 200만원대 정도 됩니다. 연금만으로는 빠듯했던 생활이 한결 나아졌고, 병원비나 생활비 걱정도 전보다 줄었습니다. 우리 부부한테는 참 고마운 수입원입니다.</p>
+                    <div class="interview-content">
+                        <div class="interview-header">
+                            <div>
+                                <div class="store-name">산본시장점</div>
+                                <div class="store-owner">점주 인터뷰</div>
+                            </div>
+                        </div>
+                        <div class="interview-body">
+                            <span class="interview-highlight">"군포 산본시장점 가맹점주(60대 정년퇴직자) 월 순이익 200만원대"</span>
+                            <p>나이 들어서 무리한 일은 하기 어렵고, 그렇다고 집에만 있자니 수입이 아쉬웠습니다. 그래서 시작한 게 에그팜인데, 생각보다 운영이 어렵지 않았고 지금은 월 순이익이 200만원대 정도 됩니다. 연금만으로는 빠듯했던 생활이 한결 나아졌고, 병원비나 생활비 걱정도 전보다 줄었습니다. 우리 부부한테는 참 고마운 수입원입니다.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 5. 마천시장점 -->
                 <div class="interview-card">
-                    <div class="interview-header">
-                        <div>
-                            <div class="store-name">마천시장점</div>
-                            <div class="store-owner">점주 인터뷰</div>
-                        </div>
+                    <!-- ★ 사진 이미지 (파일명 변경 필요) ★ -->
+                    <div class="interview-image">
+                        <img src="store5.jpg" alt="마천시장점 점주 사진">
                     </div>
-                    <div class="interview-body">
-                        <span class="interview-highlight">"송파 마천시장점 가맹점주(40대 주부) 월 순이익 390만원대"</span>
-                        <p>40대가 되니 애들키우면서 돈 버는 게 정말 쉽지 않더라고요. 에그팜은 매장에 계속 있어야 하는 일이 아니라 집안일을 병행하는 저에게 잘 맞았습니다. 전통시장 안에 매장을 오픈하면서 추가 공사까지 포함해 총 3,600만 원 정도 투자했는데, 지금은 월 순이익이 390만 원 정도 나오고 있습니다. 아이들 교육비와 생활비 부담이 많이 줄었고, 무엇보다 시간을 뺏기지 않으면서 추가 수입이 생긴다는 점이 가장 만족스럽습니다. 저처럼 육아와 창업을 함께 고민하는 분들에게 추천하고 싶어요.</p>
+                    <div class="interview-content">
+                        <div class="interview-header">
+                            <div>
+                                <div class="store-name">마천시장점</div>
+                                <div class="store-owner">점주 인터뷰</div>
+                            </div>
+                        </div>
+                        <div class="interview-body">
+                            <span class="interview-highlight">"송파 마천시장점 가맹점주(40대 주부) 월 순이익 390만원대"</span>
+                            <p>40대가 되니 애들키우면서 돈 버는 게 정말 쉽지 않더라고요. 에그팜은 매장에 계속 있어야 하는 일이 아니라 집안일을 병행하는 저에게 잘 맞았습니다. 전통시장 안에 매장을 오픈하면서 추가 공사까지 포함해 총 3,600만 원 정도 투자했는데, 지금은 월 순이익이 390만 원 정도 나오고 있습니다. 아이들 교육비와 생활비 부담이 많이 줄었고, 무엇보다 시간을 뺏기지 않으면서 추가 수입이 생긴다는 점이 가장 만족스럽습니다. 저처럼 육아와 창업을 함께 고민하는 분들에게 추천하고 싶어요.</p>
+                        </div>
                     </div>
                 </div>
             </div>
