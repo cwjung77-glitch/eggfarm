@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cwjung77-glitch.github.io/eggfarm/sitemap.xml
