@@ -51,6 +51,18 @@
         .feature-item p { color: #666; font-size: 15px; line-height: 1.6; }
         .feature-item .badge { display: inline-block; background: #F5A623; color: white; padding: 5px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; margin-bottom: 15px; }
 
+        /* ★ 점주 인터뷰 섹션 스타일 추가 ★ */
+        .interview-section { padding: 100px 0; background-color: #fff; }
+        .interview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .interview-card { background: #fff; border: 1px solid #eaeaea; border-radius: 15px; padding: 35px 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
+        .interview-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        .interview-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: #F5A623; }
+        .interview-header { display: flex; align-items: center; margin-bottom: 20px; }
+        .store-name { font-size: 20px; font-weight: 800; color: #222; }
+        .store-owner { font-size: 14px; color: #F5A623; font-weight: 600; margin-top: 2px; }
+        .interview-highlight { font-weight: 800; color: #333; margin-bottom: 12px; display: block; font-size: 18px; line-height: 1.4; word-break: keep-all; }
+        .interview-body p { font-size: 15px; color: #666; line-height: 1.6; word-break: keep-all; }
+
         /* 가맹문의 섹션 (Contact) */
         .contact { padding: 100px 0; background-color: #FFF9F0; }
         .contact-wrap { display: flex; flex-wrap: wrap; gap: 50px; }
@@ -85,6 +97,8 @@
             <div class="nav-links">
                 <a href="#about">브랜드 소개</a>
                 <a href="#features">프랜차이즈 경쟁력</a>
+                <!-- ★ 메뉴에 가맹점 인터뷰 추가 ★ -->
+                <a href="#interviews">가맹점 성공사례</a>
                 <a href="#contact">가맹문의</a>
             </div>
         </div>
@@ -102,12 +116,10 @@
             <h2 class="section-title">건강한 먹거리의 시작, <span class="highlight">에그팜</span></h2>
             <p class="section-subtitle">자연의 신선함을 그대로 담아 고객의 식탁까지 가장 안전하게 전달합니다.</p>
             
-            <!-- 요청하신 브랜드 이야기 이미지 -->
             <div style="text-align: center;">
                 <img src="브랜드소개.png" alt="에그팜 브랜드 이야기 - 신선함이 다르다">
             </div>
             
-            <!-- 텍스트 요약 컨텐츠 -->
             <div class="trust-grid">
                 <div class="trust-card">
                     <h3>에그팜 3無 원칙</h3>
@@ -150,13 +162,94 @@
                 <div class="feature-item">
                     <div class="badge">본사 파격 지원</div>
                     <h3>가맹비 무료 혜택</h3>
-                    <p>가맹비 전면 무료 및 2년간 가맹 로열티 면제 혜택을 제공하며[cite: 1], 계약 후 최단 2주 안에 오픈이 가능하도록 본사가 든든하게 지원합니다.</p>
+                    <p>가맹비 전면 무료 및 2년간 가맹 로열티 면제 혜택을 제공하며, 계약 후 최단 2주 안에 오픈이 가능하도록 본사가 든든하게 지원합니다.</p>
                 </div>
             </div>
 
-            <!-- 요청하신 에그팜 선택 이유 이미지 -->
             <div style="text-align: center; margin-top: 30px;">
                 <img src="photo_2026-07-13_16-57-26 (3).jpg" alt="에그팜을 선택해야 하는 이유 - 공정위 등록 기업">
+            </div>
+        </div>
+    </section>
+
+    <!-- ★ 새로 추가된 점주 인터뷰 섹션 ★ -->
+    <section id="interviews" class="interview-section">
+        <div class="container">
+            <h2 class="section-title">에그팜과 함께한 <span class="highlight">성공 스토리</span></h2>
+            <p class="section-subtitle">먼저 에그팜을 선택하여 성공을 경험하고 있는 점주님들의 생생한 후기를 확인하세요.</p>
+            
+            <div class="interview-grid">
+                <!-- 1. 삼전동 3호점 -->
+                <div class="interview-card">
+                    <div class="interview-header">
+                        <div>
+                            <div class="store-name">삼전동 3호점</div>
+                            <div class="store-owner">점주 인터뷰</div>
+                        </div>
+                    </div>
+                    <div class="interview-body">
+                        <!-- 실제 인터뷰의 핵심 소제목으로 교체해주세요 -->
+                        <span class="interview-highlight">"무인으로 운영되니 투잡으로 완벽합니다!"</span>
+                        <!-- 실제 인터뷰 내용으로 교체해주세요 -->
+                        <p>이곳에 실제 홈페이지에 있는 삼전동 3호점 점주님의 인터뷰 텍스트를 복사해서 붙여넣어주세요.</p>
+                    </div>
+                </div>
+
+                <!-- 2. 삼전5호점 -->
+                <div class="interview-card">
+                    <div class="interview-header">
+                        <div>
+                            <div class="store-name">삼전5호점</div>
+                            <div class="store-owner">점주 인터뷰</div>
+                        </div>
+                    </div>
+                    <div class="interview-body">
+                        <span class="interview-highlight">"압도적인 마진율과 빠른 투자금 회수"</span>
+                        <p>이곳에 실제 홈페이지에 있는 삼전5호점 점주님의 인터뷰 텍스트를 복사해서 붙여넣어주세요.</p>
+                    </div>
+                </div>
+
+                <!-- 3. 가락동점 -->
+                <div class="interview-card">
+                    <div class="interview-header">
+                        <div>
+                            <div class="store-name">가락동점</div>
+                            <div class="store-owner">점주 인터뷰</div>
+                        </div>
+                    </div>
+                    <div class="interview-body">
+                        <span class="interview-highlight">"산지 직송의 신선함이 단골을 만듭니다"</span>
+                        <p>이곳에 실제 홈페이지에 있는 가락동점 점주님의 인터뷰 텍스트를 복사해서 붙여넣어주세요.</p>
+                    </div>
+                </div>
+
+                <!-- 4. 산본시장점 -->
+                <div class="interview-card">
+                    <div class="interview-header">
+                        <div>
+                            <div class="store-name">산본시장점</div>
+                            <div class="store-owner">점주 인터뷰</div>
+                        </div>
+                    </div>
+                    <div class="interview-body">
+                        <span class="interview-highlight">"시장 상권에서도 통하는 프리미엄 계란"</span>
+                        <p>이곳에 실제 홈페이지에 있는 산본시장점 점주님의 인터뷰 텍스트를 복사해서 붙여넣어주세요.</p>
+                    </div>
+                </div>
+
+                <!-- 5. 마천시장점 -->
+                <div class="interview-card">
+                    <div class="interview-header">
+                        <div>
+                            <div class="store-name">마천시장점</div>
+                            <div class="store-owner">점주 인터뷰</div>
+                        </div>
+                    </div>
+                    <div class="interview-body">
+                        <span class="interview-highlight">"본사의 탄탄한 지원 덕분에 든든합니다"</span>
+                        <p>이곳에 실제 홈페이지에 있는 마천시장점 점주님의 인터뷰 텍스트를 복사해서 붙여넣어주세요.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -167,7 +260,7 @@
             <div class="contact-info">
                 <h2>에그팜과 함께<br><span class="highlight">성공 신화</span>를 쓰세요</h2>
                 <p>계절과 경기를 타지 않는 면세사업 아이템, 계란<br>지금 바로 가맹 상담을 신청하세요.</p>
-                <a href="tel:010-5733-0499" class="phone-number">010-5733-0499</a> <!-- 이미지 텍스트에 명시된 대표번호 반영 -->
+                <a href="tel:010-5733-0499" class="phone-number">010-5733-0499</a>
                 <p>운영시간: 평일 09:00 - 18:00</p>
             </div>
 
@@ -205,7 +298,6 @@
     </footer>
 
     <script>
-        // ★여기에 발급받으신 '웹 앱 URL'을 따옴표 안에 다시 붙여넣으세요!★
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyMDfXHFY5wgpgMEeGuZMqHHhFfHL82Mhhc3uxywwUzlLO3PXxVwuYhLrljbdexbE6U/exec';
         
         const form = document.forms['submit-to-google-sheet'];
